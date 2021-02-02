@@ -71,7 +71,10 @@ function getDescription(event) {
         description.height +
         " cm et pèse " +
         description.weight +
-        " kg";
+        " kg" +
+        '<img src = "' +
+        description.sprites.front_default +
+        '"/> ';
 
       // pour l'affichage dans le navigateur
       document.getElementById("detail").innerHTML = texteHTML;
