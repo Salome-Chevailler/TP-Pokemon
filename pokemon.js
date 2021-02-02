@@ -1,9 +1,4 @@
 // ====== Afficher la liste des Pokemon ========
-// -- gestion du clic sur le bouton
-// cible : le bouton d'id "pokemon"
-// event : click
-// action : liste des Pokemon
-document.getElementById("pokemon").addEventListener("click", getPokemon);
 
 // ====== la fonction qui récupère les Pokemon et les affiche
 function getPokemon(event) {
@@ -20,6 +15,10 @@ function getPokemon(event) {
       // dataJSON = les données renvoyées
       console.log(dataJSON);
       let pokemons = dataJSON.results;
+      // tri de la liste par ordre alphabétique des noms
+      pokemons.sort((p1, p2) => {
+        return p1.name < p2.name;
+      });
       // ici le traitement des données …
       // ajouter une <option value="url du pok">name du pok</option> pour chaque pokemon
       let texteHTML = "";
@@ -34,3 +33,6 @@ function getPokemon(event) {
       console.log(error);
     });
 }
+
+// Appel de la fonction
+getPokemon();
